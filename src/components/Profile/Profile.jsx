@@ -4,7 +4,7 @@ import MyPosts from './MyPosts/MyPosts';
 
 const Profile = () => {
   return (
-    <div className={style.content}>
+    <div>
       <div>
         <img src='https://avatars.mds.yandex.net/i?id=dd56e26248acfe84650072905ac99ca50e9c7bec-5233263-images-thumbs&n=13' />
       </div>
