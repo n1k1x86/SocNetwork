@@ -1,16 +1,29 @@
 .nav {
   grid-area: n;
-  background-color: aliceblue;
+  background-color: black;
+  border-radius: 10px;
 }
 
 .item {
   padding: 10px;
-  color: blueviolet;
+  color: white;
   text-decoration: none;
 }
 
-a.active {
+.item img {
+  width: 19px;
+  height: 17px;
+  margin-right: 10px;
+  margin-bottom: -3.6px;
+}
+
+.item a{
   padding: 10px;
-  color: black;
+  color: white;
   text-decoration: none;
+}
+
+.item a:hover {
+  background: rgba(229, 223, 223, 0.922);
+  border-radius: 10px;
 }
