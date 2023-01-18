@@ -55,10 +55,21 @@ let state = {
 
 for (let i = 0; i < 3; i++){
     state.sideBar.friends[i] = state.users[i];    
-}
+};
 
 for (let i = 0; i < 5; i++){
     state.dialogsPage.dialogs[i] = state.users[i];
-}
+};
+
+export let addPost = (postMessage) => {
+    let post = {
+        id: 5,
+        message: postMessage,
+        likesCount: 0,
+        dislikesCount: 0,
+    };
+
+    state.profilePage.posts.push(post);
+};
 
 export default state;
