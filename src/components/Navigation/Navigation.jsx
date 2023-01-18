@@ -1,8 +1,9 @@
 import React from "react";
 import style from './Navigation.module.css';
+import Friends from './Friends/Friends';
 import { NavLink } from "react-router-dom";
 
-const Navigation = () => {
+const Navigation = (props) => {
     return (
         <nav className={style.nav}>
             <div className={style.item}>
@@ -29,11 +30,14 @@ const Navigation = () => {
                     <span>Music</span>
                 </NavLink>
             </div>
-            <div className={style.item}>
+            <div className={`${style.item} ${style.settings}`}>
                 <NavLink to="/#">
                     <img src={require('./icons/settings_icon.png')} />
                     <span>Settings</span>
                 </NavLink>
+            </div>
+            <div className={style.item}>
+                <Friends friends={props.state.friends}/>
             </div>
         </nav>
     );

@@ -27,3 +27,8 @@
   background: rgba(229, 223, 223, 0.922);
   border-radius: 10px;
 }
+
+.settings {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}

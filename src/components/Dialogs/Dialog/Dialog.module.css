@@ -1,0 +1,22 @@
+.item {
+    padding: 20px;
+}
+
+.item a {
+    text-decoration: none;
+    color: white;
+}
+
+.item img {
+    border-radius: 20px;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    margin-bottom: -10px;
+    padding-top: 10px;
+}
+
+.item a:hover {
+    background: rgba(229, 223, 223, 0.922);
+    border-radius: 5px;
+}

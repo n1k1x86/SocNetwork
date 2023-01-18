@@ -4,22 +4,10 @@
 }
 
 .dialogItems {
-    
+    border-right: 3px solid white;
 }
 
-.dialog {
-    padding: 20px;
-}
-
-.dialog a{
-    text-decoration: none;
-    color: white;
-}
-
-.messages {
-
-}
-
-.message {
-    padding: 30px;
+.item {
+    padding: 15px;
+    font-size: 25px;
 }
