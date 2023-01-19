@@ -1,3 +1,7 @@
+let rerenderEntireTree = () => {
+    console.log("State was changed");
+};
+
 let state = {
     dialogsPage: {
         dialogs: [],
@@ -13,6 +17,7 @@ let state = {
             { id: 1, message: 'Hi, how are you ?', likesCount: 10, dislikesCount: 4 },
             { id: 2, message: 'It\'s my first post ! I\'m fine !', likesCount: 23, dislikesCount: 2 }
         ],
+        newPostText: "New Post",
     },
 
     users: [
@@ -61,7 +66,8 @@ for (let i = 0; i < 5; i++){
     state.dialogsPage.dialogs[i] = state.users[i];
 };
 
-export let addPost = (postMessage) => {
+export const addPost = (postMessage) => {
+
     let post = {
         id: 5,
         message: postMessage,
@@ -70,6 +76,19 @@ export let addPost = (postMessage) => {
     };
 
     state.profilePage.posts.push(post);
+
+    state.profilePage.newPostText = "";
+
+    rerenderEntireTree(state);
 };
+
+export const updatePostText = (text) => {
+    state.profilePage.newPostText = text;
+    rerenderEntireTree(state);
+};
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
+}
 
 export default state;
