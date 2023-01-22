@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 let store = {
     _state: {
@@ -10,6 +12,7 @@ let store = {
                 { id: 2, message: 'Where is our books ?' },
                 { id: 3, message: 'What about this film ?' }
             ],
+            newMessageText: "New Message",
         },
 
         profilePage: {
@@ -86,7 +89,7 @@ let store = {
         if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
             this.callSubscriber(this._state);
-        } else if (action.type == ADD_POST) {
+        } else if (action.type === ADD_POST) {
             let post = {
                 id: 5,
                 message: this._state.profilePage.newPostText,
@@ -99,6 +102,24 @@ let store = {
             this._state.profilePage.newPostText = "";
 
             this.callSubscriber(this._state);
+
+        }else if (action.type === SEND_MESSAGE){
+            let message = {
+                id: 4,
+                message: this._state.dialogsPage.newMessageText,
+            }
+
+            this._state.dialogsPage.messages.push(message);
+
+            this._state.dialogsPage.newMessageText = "";
+
+            this.callSubscriber(this._state);
+        }else if (action.type === UPDATE_NEW_MESSAGE_TEXT){
+
+            this._state.dialogsPage.newMessageText = action.newText;
+
+            this.callSubscriber(this._state);
+
         }
     },
 }
@@ -115,6 +136,19 @@ export const addPostActionCreator = () => {
 export const updatePostTextActionCreator = (text) => {
     return {
         type: UPDATE_NEW_POST_TEXT,
+        newText: text
+    }
+}
+
+export const sendMessageActionCreator = () => {
+    return {
+        type: SEND_MESSAGE,
+    }
+}
+
+export const updateNewMessageTextActionCreator = (text) => {
+    return {
+        type: UPDATE_NEW_MESSAGE_TEXT,
         newText: text
     }
 }
