@@ -1,6 +1,6 @@
 import React from "react";
 import style from './Navigation.module.css';
-import Friends from './Friends/Friends';
+import FriendsContainer from './Friends/FriendsContainer';
 import { NavLink } from "react-router-dom";
 
 const Navigation = (props) => {
@@ -37,7 +37,7 @@ const Navigation = (props) => {
                 </NavLink>
             </div>
             <div className={style.item}>
-                <Friends friends={props.state.friends}/>
+                <FriendsContainer/>
             </div>
         </nav>
     );
